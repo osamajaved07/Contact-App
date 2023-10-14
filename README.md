@@ -1,5 +1,6 @@
 # Contact App
 Contact app (both frontend and backend) created with **flutter and firebase**.
+This Flutter app is a comprehensive contact manager that enables users to manage their contacts with ease. It offers features like adding new contacts, updating existing ones, and removing contacts. Additionally, users can register and log in to the app, including the option to use their Google accounts for a seamless sign-up experience.
 
 **Show some love❤️ and star the repo to support the project.**
 
