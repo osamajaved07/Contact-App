@@ -1,4 +1,4 @@
-# Contact App
+# Contact Manager App
 Contact app (both frontend and backend) created with **flutter and firebase**.
 This Flutter app is a comprehensive contact manager that enables users to manage their contacts with ease. It offers features like adding new contacts, updating existing ones, and removing contacts. Additionally, users can register and log in to the app, including the option to use their Google accounts for a seamless sign-up experience.
 
@@ -8,11 +8,15 @@ This Flutter app is a comprehensive contact manager that enables users to manage
 
 Get the APK file from the [apk_folder](https://github.com/osamajaved07/Contact-App/tree/master/apk_folder).
 
-## Features
-"Tired of forgetting information and getting lost in a mess of sticky notes? Refresh the way you keep track with Notes App. A simple tool for creating, editing, or deleting notes with just a few clicks. It's your memory aid, always at your fingertips. Give a try now and experience an organized way of managing notes."
-- Add **notes**.
-- Edit your **notes**.
-- Delete your **notes**.
+## Key Features
+
+- Contact Management: Easily add new contacts to your list, update contact details, and remove unwanted contacts.
+
+- User Authentication: Secure user registration and login functionalities for a personalized experience.
+
+- Google Sign-In: Sign up or log in using your Google account for added convenience.
+
+This app is built using Flutter for the front-end and Firebase for the backend, making it a practical and powerful solution for anyone seeking a modern contact management system.
 
 ## Video Demo
 [**Demo video**](https://github.com/osamajaved07/Note-App/assets/143210389/e1d51017-5640-4bd1-8ddf-242840bf56f7)
