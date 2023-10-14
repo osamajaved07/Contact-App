@@ -125,7 +125,7 @@ class _loginpageState extends State<loginpage> {
                   child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset('images/google.png', height: 30, width: 30,),
+                    Image.asset('images/gog.png', height: 30, width: 30,),
                     SizedBox(width: 10,),
                     Text('Continue with google', style: TextStyle(
                       fontSize: 16),)

@@ -5,6 +5,7 @@ import 'package:contact/controller/auth_service.dart';
 import 'package:contact/homepage.dart';
 import 'package:contact/loginpage.dart';
 import 'package:contact/signup.dart';
+import 'package:contact/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "/home": (context) => home(),
-        "/": (context) => checkuser(),
+        "/": (context) => splashcreen(),
         "/signup": (context) => signuppage(),
         "/login": (context) => loginpage(),
         "/add": (context) => addcontact(),
