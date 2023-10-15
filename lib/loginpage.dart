@@ -172,16 +172,16 @@ class _loginpageState extends State<loginpage> {
                 return 'Password must not be empty';
               } else if (value.length < 8) {
                 return 'Password must be at least 8 characters';
-              } else if (!RegExp(
-                      r'^(?=.*?)(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
-                  .hasMatch(value)) {
-                return 'Password must contain at least one uppercase, one lowercase, one digit, and one special character';
+              } else {
+                return null;
               }
-              return null;
+              
             },
                 controller: _passwordcontroller,
                 obscureText: !isPasswordVisible,
                 decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.password),
+                  
                   
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(16),),
                   label: Text('Password'),
@@ -214,8 +214,13 @@ class _loginpageState extends State<loginpage> {
           },
                 controller: _emailcontroller,
                 keyboardType: TextInputType.emailAddress,
+
                 decoration: InputDecoration(
+
+                  prefixIcon: Icon(Icons.email_outlined),
+
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+                  
                   label: Text('Email'),
                   hintText: 'Enter your Email here'
                 ),

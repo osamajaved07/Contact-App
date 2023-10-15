@@ -142,12 +142,9 @@ class _homeState extends State<home> {
             ),
               ],
             ),
-            // TextButton(
-            //   child: Text('Close'),
-            //   onPressed: () {
-            //     Navigator.of(context).pop(); // Close the dialog
-            //   },
-            // ),
+            
+
+
           ],
         );
       },
@@ -166,23 +163,12 @@ class _homeState extends State<home> {
   ),
 );
 
-            // return ListTile(
-            //   onTap:() => Navigator.push(context, MaterialPageRoute(
-            //     builder: (context) => updatecontact(
-            //       name: data['name'],
-            //       phone: data['phone'],
-            //       email: data['email'],
-            //       docId: document.id))) ,
+            
 
 
-            //   leading: CircleAvatar(child: Text(data['name'][0]),),
 
-            //   title: Text(data['name']),
-            //   subtitle: Text(data['phone']),
-            //   trailing: IconButton(onPressed: (){
-            //     calluser(data['phone']);
-            //   }, icon: Icon(Icons.phone)) ,
-            // );
+
+            
           }).toList().cast(),
         );
       }, stream: _stream),

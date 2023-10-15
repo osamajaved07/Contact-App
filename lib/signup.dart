@@ -52,116 +52,22 @@ class _signuppageState extends State<signuppage> {
           
                 SizedBox(height: 20,),
 
-                Container(
-  width: MediaQuery.of(context).size.width * 0.89, // 80% of the screen width
-  // height: 60, // Fixed height
-  child: Row(
-    children: [
-      Flexible(
-        child: TextFormField(
-          keyboardType: TextInputType.name,
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Name must not be empty';
-            } else return null;
-            
-          },
-          decoration: InputDecoration(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-            labelText: 'First Name',
-            hintText: 'John',
-          ),
-        ),
-      ),
-      SizedBox(width: 8),
-      Flexible(
-        child: TextFormField(
-          keyboardType: TextInputType.name,
-          
-          decoration: InputDecoration(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-            labelText: 'LastName',
-            hintText: 'Doe',
-          ),
-        ),
-      ),
-    ],
-  ),
-),
+                namefield(context),
           
           SizedBox(height: 20,),
-                TextFormField(
-                  validator: (value) => value!.isEmpty? "Email cannot be empty." : null,
-                  controller: _emailcontroller,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-                    label: Text('Email'),
-                    hintText: 'Enter your Email here'
-                  ),
-                  
-                ),
+
+
+                emailfield(),
           
           
                 SizedBox(height: 20,),
           
           
-                TextFormField(
-                  validator: (value) => value!.length<8? "Password cannot be less than 8 characters":null,
-                  controller: _passwordcontroller,
-                  obscureText: !isPasswordVisible,
-                  decoration: InputDecoration(
-                    
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(16),),
-                    label: Text('Password'),
-                    hintText: 'Enter your Password here',
-
-                    suffixIcon: IconButton(
-              icon: Icon(
-                isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-              ),
-              onPressed: () {
-                setState(() {
-                  isPasswordVisible = !isPasswordVisible; // Toggle visibility
-                });
-              },
-            ),
-                  ),
-                  
-                ),
+                passwordfield(),
                 SizedBox(height: 32,),
                 
                 
-                SizedBox(
-                  height: 48,
-                  width: MediaQuery.of(context).size.width * .9,
-                  child: ElevatedButton(onPressed: (){
-                    
-                    if (formkey.currentState!.validate()){
-                      AuthService().createAccountWithEmail(_emailcontroller.text, _passwordcontroller.text).then((value) {
-                        if (value == "Account Created"){
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: 
-                            Text('Account created successfully..!')));
-                            Navigator.pushNamed(context, "/home");
-
-                        }
-                        else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: 
-                            Text(value, style: TextStyle(
-                              color: Colors.white,
-                            ),), backgroundColor: Colors.red.shade400,));
-
-                        }
-                      });
-
-
-                    }
-                    
-                  }, child: Text("SignUp", style: TextStyle(
-                    fontSize: 20
-                  ),))),
+                signupbutton(context),
                 
                 
                   SizedBox(height: 20,),
@@ -169,51 +75,12 @@ class _signuppageState extends State<signuppage> {
                 
                 
                 
-                  OutlinedButton(
-                    onPressed: (){
-
-                      AuthService().continueWithGoogle().then((value){
-                        if (value == "Google account login successfull..."){
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: 
-                            Text('Google Login Successfully..')));
-                            Navigator.pushNamed(context, "/home");
-
-                        }
-                        else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: 
-                            Text(value, style: TextStyle(
-                              color: Colors.white,
-                            ),), backgroundColor: Colors.red.shade400,));
-
-                        }
-
-                      });
-                      
-                    }, child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset('images/gog.png', height: 30, width: 30,),
-                      SizedBox(width: 10,),
-                      Text('Continue with google', style: TextStyle(
-                        fontSize: 16),)
-                    ],
-                  )),
+                  googleloginbutton(context),
                 
                   SizedBox(height: 20,),
                 
                 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Already have an account?"),
-                      TextButton(onPressed: (){
-                        Navigator.pop(context);
-                      }, child: Text('LogIn', style: TextStyle(
-                        fontSize: 18),))
-                    ],
-                  )
+                  login(context)
               ],
             ),
           ),
@@ -221,5 +88,187 @@ class _signuppageState extends State<signuppage> {
       ),
 
     );
+  }
+
+
+
+  
+
+  Row login(BuildContext context) {
+    return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Already have an account?"),
+                    TextButton(onPressed: (){
+                      Navigator.pop(context);
+                    }, child: Text('LogIn', style: TextStyle(
+                      fontSize: 18),))
+                  ],
+                );
+  }
+
+  OutlinedButton googleloginbutton(BuildContext context) {
+    return OutlinedButton(
+                  onPressed: (){
+
+                    AuthService().continueWithGoogle().then((value){
+                      if (value == "Google account login successfull..."){
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: 
+                          Text('Google Login Successfully..')));
+                          Navigator.pushNamed(context, "/home");
+
+                      }
+                      else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: 
+                          Text(value, style: TextStyle(
+                            color: Colors.white,
+                          ),), backgroundColor: Colors.red.shade400,));
+
+                      }
+
+                    });
+                    
+                  }, child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('images/gog.png', height: 30, width: 30,),
+                    SizedBox(width: 10,),
+                    Text('Continue with google', style: TextStyle(
+                      fontSize: 16),)
+                  ],
+                ));
+  }
+
+  SizedBox signupbutton(BuildContext context) {
+    return SizedBox(
+                height: 48,
+                width: MediaQuery.of(context).size.width * .9,
+                child: ElevatedButton(onPressed: (){
+                  
+                  if (formkey.currentState!.validate()){
+                    AuthService().createAccountWithEmail(_emailcontroller.text, _passwordcontroller.text).then((value) {
+                      if (value == "Account Created"){
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: 
+                          Text('Account created successfully..!')));
+                          Navigator.pushNamed(context, "/home");
+
+                      }
+                      else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: 
+                          Text(value, style: TextStyle(
+                            color: Colors.white,
+                          ),), backgroundColor: Colors.red.shade400,));
+
+                      }
+                    });
+
+
+                  }
+                  
+                }, child: Text("SignUp", style: TextStyle(
+                  fontSize: 20
+                ),)));
+  }
+
+  TextFormField passwordfield() {
+    return TextFormField(
+                validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Password must not be empty';
+            } else if (value.length < 8) {
+              return 'Password must be at least 8 characters';
+            } else {
+              return null;
+            }
+            
+          },
+                controller: _passwordcontroller,
+                obscureText: !isPasswordVisible,
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.password),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(16),),
+                  label: Text('Password'),
+                  hintText: 'Enter your Password here',
+
+                  suffixIcon: IconButton(
+            icon: Icon(
+              isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+            ),
+            onPressed: () {
+              setState(() {
+                isPasswordVisible = !isPasswordVisible; // Toggle visibility
+              });
+            },
+          ),
+                ),
+                
+              );
+  }
+
+  TextFormField emailfield() {
+    return TextFormField(
+                validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Email must not be empty';
+          } else if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
+            return 'Enter a valid email';
+          }
+          return null;
+        },
+                controller: _emailcontroller,
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+
+                  prefixIcon: Icon(Icons.email_outlined),
+                  
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+                  label: Text('Email'),
+                  hintText: 'Enter your Email here'
+                ),
+                
+              );
+  }
+
+  Container namefield(BuildContext context) {
+    return Container(
+width: MediaQuery.of(context).size.width * 0.89, // 80% of the screen width
+// height: 60, // Fixed height
+child: Row(
+  children: [
+    Flexible(
+      child: TextFormField(
+        keyboardType: TextInputType.name,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Name must not be empty';
+          } else return null;
+          
+        },
+        decoration: InputDecoration(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+          labelText: 'First Name',
+          hintText: 'John',
+        ),
+      ),
+    ),
+    SizedBox(width: 8),
+    Flexible(
+      child: TextFormField(
+        keyboardType: TextInputType.name,
+        
+        decoration: InputDecoration(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+          labelText: 'LastName',
+          hintText: 'Doe',
+        ),
+      ),
+    ),
+  ],
+),
+);
   }
 }
