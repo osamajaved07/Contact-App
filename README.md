@@ -71,6 +71,24 @@ This app is built using Flutter for the front-end and Firebase for the backend, 
       <p>Here you can update contact.</p>
     </td>
   </tr>
-   
+
+
+  <tr>
+    <td align="center">
+      <img src="https://github.com/osamajaved07/Contact-App/assets/143210389/2c85d7ab-836f-4576-a382-b713bf627d00" alt="ss1" width="200"/>
+      <p>Confirm before deleting a contact.</p>
+    </td>
+        <td align="center">
+      <img src="https://github.com/osamajaved07/Contact-App/assets/143210389/701a4049-666f-4dc0-afbf-2c2f6c4935af" alt="ss1" width="200"/>
+      <p>.</p>
+    </td>
+        <td align="center">
+      <img src="https://github.com/osamajaved07/Contact-App/assets/143210389/93ed7d9a-7c88-4b49-926d-8c60a58b0e36" alt="ss1" width="200"/>
+      <p>Confirm before logging out.</p>
+    </td>
+    
+  </tr>
+
+
 </table>
 </div>
