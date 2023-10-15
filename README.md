@@ -45,24 +45,30 @@ This app is built using Flutter for the front-end and Firebase for the backend, 
   <tr>
     <td align="center">
       <img src="https://github.com/osamajaved07/Contact-App/assets/143210389/c75feee0-613e-4f30-8bb6-35fcbb9a8ed0" alt="ss1" width="200"/>
-      <p>Here you can create your account 
-          if you are a new user.
-      </p>
+      <p>Here you can create your account if you are a new user.</p>
     </td>
     <td align="center">
-      <img src="https://github.com/osamajaved07/Notes-App/assets/143210389/808669ce-8339-4ab8-86fd-25f5683a319a" alt="ss1" width="200"/>
-      <p>Here you can edit your notes.</p>
+      <img src="https://github.com/osamajaved07/Contact-App/assets/143210389/e0a7619e-fe03-4880-a15a-b971007fb965" alt="ss1" width="200"/>
+      <p>Homepage Screen</p>
     </td>
     <td align="center">
-      <img src="https://github.com/osamajaved07/Notes-App/assets/143210389/9638ae91-3172-436a-8473-207741324a09" alt="ss1" width="200"/>
-      <p>Edit your notes.</p>
+      <img src="https://github.com/osamajaved07/Contact-App/assets/143210389/794fbefc-b567-49fe-8f76-b243b65c0096" alt="ss1" width="200"/>
+      <p>Add new contact here.</p>
     </td>
     </tr>
 
   <tr>
     <td align="center">
-      <img src="https://github.com/osamajaved07/Notes-App/assets/143210389/db8e88f4-70a9-44b2-8079-2f8a1943e6f4" alt="ss1" width="200"/>
-      <p>Here is how you can see how your edited note appeared..</p>
+      <img src="https://github.com/osamajaved07/Contact-App/assets/143210389/aeb8412e-31d0-4963-8c8f-052c471e03d2" alt="ss1" width="200"/>
+      <p>Here I have added some dummy contacts.</p>
+    </td>
+        <td align="center">
+      <img src="https://github.com/osamajaved07/Contact-App/assets/143210389/38020b4a-c13d-4dce-83c9-0b63af6f2ffd" alt="ss1" width="200"/>
+      <p>Contact details.</p>
+    </td>
+        <td align="center">
+      <img src="https://github.com/osamajaved07/Contact-App/assets/143210389/99f95314-8dbb-4efc-8d76-f559a3e7e65f" alt="ss1" width="200"/>
+      <p>Here you can update contact.</p>
     </td>
   </tr>
    
