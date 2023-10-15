@@ -18,10 +18,6 @@ Get the APK file from the [apk_folder](https://github.com/osamajaved07/Contact-A
 
 This app is built using Flutter for the front-end and Firebase for the backend, making it a practical and powerful solution for anyone seeking a modern contact management system.
 
-## Video Demo
-[**Demo video**](https://github.com/osamajaved07/Note-App/assets/143210389/e1d51017-5640-4bd1-8ddf-242840bf56f7)
-
-
 
 
 
